@@ -25,4 +25,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: graphql-scalar-sample
-          entrypoint: src/sever.ts
+          entrypoint: src/server.ts

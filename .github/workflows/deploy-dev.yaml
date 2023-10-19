@@ -1,0 +1,37 @@
+name: Deploy to the development environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Deno 1.36.4
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.36.4
+
+      - name: Hello world
+        run: |
+          echo "Hello world! from CI"
+
+      # - name: Install dependencies
+      #   run: npm install
+
+      # - name: Copy .env file
+      #   run: cp .env.example .env
+
+      # - name: Create prisma client (Just for the type annotation)
+      #   run: deno task migrate:generate 
+
+      # - name: Deploy to Deno Deploy
+      #   uses: denoland/deployctl@v1
+      #   with:
+      #     project: mytk-blog
+      #     entrypoint: src/sever.ts

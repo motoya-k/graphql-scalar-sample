@@ -1,0 +1,15 @@
+{
+  "lock": "./lock.file",
+  "imports": {
+    "graphql": "npm:graphql@16.8.1",
+    "graphql-yoga": "npm:graphql-yoga@^3.7.3",
+    "@graphql-tools/merge": "npm:@graphql-tools/merge@^9.0.0",
+    "fishery": "npm:fishery@^2.2.2",
+    "graphql-scalars": "npm:graphql-scalars@1.22.4",
+    "http/server": "https://deno.land/std@0.148.0/http/server.ts",
+    "dotenv": "https://deno.land/std@0.201.0/dotenv/mod.ts"
+  },
+  "tasks": {
+    "start": "deno run -A src/server.ts"
+  }
+}

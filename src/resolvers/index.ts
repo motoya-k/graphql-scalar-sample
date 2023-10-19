@@ -1,10 +1,14 @@
-const Resolvers = `
-  Query: {
-    tenants: () => {}
-  },
+import { mergeResolvers } from 'npm:@graphql-tools/merge';
 
-export const resolvers = {
-  Query: {
-    tenants: () => {}
-  },
-};
+import { mutationResolver, mutationTypeDefs } from "./mutations/index.ts";
+import { queryResolver, queryTypeDefs } from "./queries/index.ts";
+
+export const resolverTypeDefs = [
+  ...mutationTypeDefs,
+  ...queryTypeDefs,
+]
+export const resolvers = mergeResolvers([
+  queryResolver,
+  mutationResolver,
+])
+

@@ -1,39 +1,28 @@
 import { load } from "dotenv";
 import { createSchema, createYoga } from "graphql-yoga";
 import { serve } from "http/server";
-import { mergeTypeDefs } from 'npm:@graphql-tools/merge';
+import { mergeResolvers, mergeTypeDefs } from 'npm:@graphql-tools/merge';
 
-import { GraphQLLatitude } from "graphql-scalars";
 
 import { entitySchema } from "./entities/index.ts";
+import { scalarDefs, scalarResolvers } from "./graphql/index.ts";
+import { resolverTypeDefs, resolvers } from "./resolvers/index.ts";
 
 await load({ export: true });
 
-const scalarDefs = /* GraphQL */ `
-  scalar ${GraphQLLatitude.name} @specifiedBy(url: "${GraphQLLatitude.description}")
-`
-
-const QueryDefs = /* GraphQL */ `
-  type Query {
-    ping: String!
-  }
-`
-
 export const typeDefs = mergeTypeDefs([
   scalarDefs,
-  QueryDefs,
   ...entitySchema,
+  ...resolverTypeDefs,
 ]);
 
 const yoga = createYoga({
   schema: createSchema({
     typeDefs: typeDefs,
-    resolvers: {
-      [GraphQLLatitude.name]: GraphQLLatitude,
-      Query: {
-        ping: () => "pong",
-      },
-    },
+    resolvers: mergeResolvers([
+      scalarResolvers,
+      resolvers,
+    ])
   }),
 });
 

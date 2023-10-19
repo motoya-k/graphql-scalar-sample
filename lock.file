@@ -2,12 +2,14 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "npm:@faker-js/faker@^8.2.0": "npm:@faker-js/faker@8.2.0",
       "npm:@graphql-codegen/core@2.6.6": "npm:@graphql-codegen/core@2.6.6_graphql@16.8.1",
       "npm:@graphql-codegen/core@4.0.0": "npm:@graphql-codegen/core@4.0.0_graphql@16.8.1",
       "npm:@graphql-codegen/typescript-operations@4.0.1": "npm:@graphql-codegen/typescript-operations@4.0.1_graphql@16.8.1",
       "npm:@graphql-codegen/typescript-resolvers@2.7.7": "npm:@graphql-codegen/typescript-resolvers@2.7.7_graphql@16.8.1",
       "npm:@graphql-codegen/typescript@2.8.2": "npm:@graphql-codegen/typescript@2.8.2_graphql@16.8.1",
       "npm:@graphql-tools/merge": "npm:@graphql-tools/merge@8.4.2_graphql@16.8.1",
+      "npm:fishery@^2.2.2": "npm:fishery@2.2.2",
       "npm:graphql-scalars@1.22.4": "npm:graphql-scalars@1.22.4_graphql@16.8.1",
       "npm:graphql-yoga@^3.7.3": "npm:graphql-yoga@3.9.1_graphql@16.8.1_@envelop+core@3.0.6",
       "npm:graphql@16.8.1": "npm:graphql@16.8.1"
@@ -489,6 +491,10 @@
           "lru-cache": "lru-cache@6.0.0",
           "tslib": "tslib@2.6.2"
         }
+      },
+      "@faker-js/faker@8.2.0": {
+        "integrity": "sha512-VacmzZqVxdWdf9y64lDOMZNDMM/FQdtM9IsaOPKOm2suYwEatb8VkdHqOzXcDnZbk7YDE2BmsJmy/2Hmkn563g==",
+        "dependencies": {}
       },
       "@graphql-codegen/core@2.6.6_graphql@16.8.1": {
         "integrity": "sha512-gU2FUxoLGw2GfcPWfBVXuiN3aDODbZ6Z9I+IGxa2u1Rzxlacw4TMmcwr4/IjC6mkiYJEKTvdVspHaby+brhuAg==",
@@ -1188,6 +1194,12 @@
           "path-exists": "path-exists@4.0.0"
         }
       },
+      "fishery@2.2.2": {
+        "integrity": "sha512-jeU0nDhPHJkupmjX+r9niKgVMTBDB8X+U/pktoGHAiWOSyNlMd0HhmqnjrpjUOCDPJYaSSu4Ze16h6dZOKSp2w==",
+        "dependencies": {
+          "lodash.mergewith": "lodash.mergewith@4.6.2"
+        }
+      },
       "fs.realpath@1.0.0": {
         "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
         "dependencies": {}
@@ -1351,6 +1363,10 @@
         "dependencies": {
           "p-locate": "p-locate@4.1.0"
         }
+      },
+      "lodash.mergewith@4.6.2": {
+        "integrity": "sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==",
+        "dependencies": {}
       },
       "lodash@4.17.21": {
         "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==",
